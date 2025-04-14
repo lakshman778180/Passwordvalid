@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Instagram UI</title>
+  <style>
+    body{
+      /* background-color:#FFD7D5; */
+      background-color:  #E3F2FD;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .conatainer{
+      width: 700px;
+      height: 500px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+.pic{
+      width: 350px;
+      height: 100%;
+      background-image: url('https://miro.medium.com/v2/resize:fit:1200/1*lC1JKjaa50eCrzEcmY7aAQ.png');
+      background-size: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+    }
+    .content{
+      width: 350px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+input[type="text"],
+input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 9px;
+      border: 1px solid #0095F6;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0095F6;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #007bb5;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    a {
+      color: #0095F6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="conatainer">
+<div class="pic">
+</div>
+<div class="content">
+<form>
+  <h2 style="color: #0095F6; font-size: 30px;">facebook</h2>
+  <h2>Login</h2>
+  <input type="text" placeholder="Username" required  id="user-nm" onchange="getFormData();"><br><br>
+  <span id="warn"></span>
+  <input type="password" placeholder="Password" required id="pwd"><br><br>
+  <button type="submit">Login</button><br><br>
+  <p>Don't have an account? <a href="https://www.facebook.com/r.php?locale=en_GB&display=page">Sign up</a></p>
+  <p>Forgot password? <a href="null">Reset</a></p>
+</form>
+</div>
+  </div>
+<script>
+function getFormData() {
+  const username = document.getElementById('user-nm').value;
+  const password = document.getElementById('pwd').value;
+  const warn = document.getElementById('warn');
+  
+if(username.lenght<3){
+    warn.textContent = 'Username must be at least 3 characters long.';
+    warn.style.color = 'red';
+  } else if (username.length > 15) {
+    warn.textContent = 'Username must be less than 15 characters long.';
+    warn.style.color = 'red';
+  } else if (password.length < 6) {
+    warn.textContent = 'Password must be at least 6 characters long.';
+    warn.style.color = 'red';
+  } else if (password.length > 20) {
+    warn.textContent = 'Password must be less than 20 characters long.';
+    warn.style.color = 'red';
+  } else {
+    warn.textContent = '';
+}
+
+}
+//   if (username === '' || password === '') {
+//     warn.textContent = 'Please fill in all fields.';
+//     warn.style.color = 'red';
+//   } else {
+//     warn.textContent = '';
+//   }
+// }
+</script>
+
+</body>
+</html>
